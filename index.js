@@ -2,7 +2,7 @@ import  Express  from "express";
 import { Cita, Doctor, Paciente} from "./dao/index.js";
 import bodyParser from "body-parser";
 import cors from "cors";
-const port = process.env.port || 4000
+const PORT = process.env.PORT || 4000
 const app = Express()
 
 /*const corsOptions = {
@@ -45,5 +45,5 @@ app.get("/pac", async (req, resp) => {
 })*/
 
 app.listen(port, ()=>{
-    console.log(`servidor iniciado en el puerto ${port}`)
+    console.log(`servidor iniciado en el puerto ${PORT}`)
 })
