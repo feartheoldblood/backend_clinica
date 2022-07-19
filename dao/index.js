@@ -6,7 +6,14 @@ import { Sequelize, Model, DataTypes } from "sequelize";
 
 const cadena_conexion = process.env.DATABASE_URL
 
-const sequelize = new Sequelize(cadena_conexion)
+const sequelize = new Sequelize(cadena_conexion, {
+    dialectOptions : {
+        ssl : {
+            require : true,
+            rejectUnauthorized : false
+        }
+    }
+})
 
 const Doctor = sequelize.define("Doctor", {
     id :{
