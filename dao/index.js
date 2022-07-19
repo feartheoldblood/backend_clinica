@@ -2,9 +2,11 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
 
 //postgrees: postgres://<user>:<pwd>@<host(ip o dominio)>:5432/<db_name>
-const conexion = "postgres://admin:admin@localhost:5432/clinica"
+//const conexion = "postgres://admin:admin@localhost:5432/clinica"
 
-const sequelize = new Sequelize(conexion)
+const cadena_conexion = process.env.DATABASE_URL
+
+const sequelize = new Sequelize(cadena_conexion)
 
 const Doctor = sequelize.define("Doctor", {
     id :{
@@ -39,7 +41,7 @@ const Paciente = sequelize.define("Paciente", {
     telefono : DataTypes.STRING(200),
     correo : DataTypes.STRING(200),
     edad : DataTypes.STRING(200),
-    telefono : DataTypes.STRING(200),
+    
     
     
 },{
