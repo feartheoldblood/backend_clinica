@@ -47,3 +47,10 @@ app.get("/pac", async (req, resp) => {
 app.listen(port, ()=>{
     console.log(`servidor iniciado en el puerto ${port}`)
 })
+
+app.post("/pac", async (req, resp) =>{
+    const paci = req.body
+    console.log(paci)
+
+    const nombreUsuario = paci.
+})
