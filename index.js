@@ -1,5 +1,5 @@
 import  Express  from "express";
-import { Doctor} from "./dao/index.js";
+import { Cita, Doctor, Paciente} from "./dao/index.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 const port = 4000
@@ -33,6 +33,17 @@ app.get("/doc", async (req, resp) => {
  const doctores = await Doctor.findAll()
     resp.send( JSON.stringify(doctores))
 })
+app.get("/pac", async (req, resp) => {
+
+    const pacientes = await Paciente.findAll()
+       resp.send( JSON.stringify(pacientes))
+   })
+/*app.get("/cit", async (req, resp) => {
+
+    const citas = await Cita.findAll()
+       resp.send( JSON.stringify(citas))
+})*/
+
 app.listen(port, ()=>{
     console.log(`servidor iniciado en el puerto ${port}`)
 })
