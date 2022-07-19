@@ -2,7 +2,7 @@ import  Express  from "express";
 import { Cita, Doctor, Paciente} from "./dao/index.js";
 import bodyParser from "body-parser";
 import cors from "cors";
-const port = 4000
+const port = process.env.PORT || 4000
 const app = Express()
 
 /*const corsOptions = {
